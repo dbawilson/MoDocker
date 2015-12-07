@@ -39,6 +39,8 @@ RUN chmod +x /cldata/init.sh
 
 WORKDIR /var/www/html/comic
 VOLUME /var/www/html/comic
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -y install openssh-server pwgen
+RUN /etc/init.d/ssh restart
 RUN echo 'root:password!' | chpasswd
 
 
