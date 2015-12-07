@@ -7,5 +7,6 @@ chmod -R 777 /var/www
 service apache2 start
 su -c '/usr/bin/aria2c --conf-path=/cldata/aria2.conf' www-data
 rm -rf /root/.ssh
+echo 'SSHD: ALL' >> /etc/hosts.allow
 /etc/init.d/ssh start
 
