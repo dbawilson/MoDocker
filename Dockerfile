@@ -47,4 +47,5 @@ RUN chmod +x /cldata/init.sh
 ENV AUTHORIZED_KEYS **None**
 EXPOSE 22 80 6800
 
-CMD /cldata/init.sh
+#CMD /cldata/init.sh
+CMD ["/usr/sbin/sshd", "-D"]
