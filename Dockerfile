@@ -44,7 +44,7 @@ RUN chmod +x /cldata/init.sh
 #VOLUME /var/www/html/comic
 
 
-
+ENV AUTHORIZED_KEYS **None**
 EXPOSE 22 80 6800
 
 CMD /cldata/init.sh
