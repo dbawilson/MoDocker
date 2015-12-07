@@ -11,6 +11,9 @@ RUN echo "deb http://archive.ubuntu.com/ubuntu trusty-updates multiverse" >> /et
 # 先更新apt-get
 RUN apt-get update && apt-get upgrade -y
 
+#ssh
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -y install openssh-server pwgen
+RUN echo 'root:password!' | chpasswd
 # 安装unrar
 RUN apt-get install unrar -y
 RUN apt-get install p7zip-full p7zip-rar -y
@@ -37,10 +40,9 @@ COPY init.sh /cldata/init.sh
 COPY init.php /cldata/init.php
 RUN chmod +x /cldata/init.sh
 
-WORKDIR /var/www/html/comic
-VOLUME /var/www/html/comic
-RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -y install openssh-server pwgen
-RUN echo 'root:password!' | chpasswd
+#WORKDIR /var/www/html/comic
+#VOLUME /var/www/html/comic
+
 
 
 EXPOSE 22 80 6800
