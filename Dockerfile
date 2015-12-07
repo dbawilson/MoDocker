@@ -12,7 +12,7 @@ RUN echo "deb http://archive.ubuntu.com/ubuntu trusty-updates multiverse" >> /et
 RUN apt-get update && apt-get upgrade -y
 
 #ssh
-RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -y install openssh-server pwgen
+RUN  DEBIAN_FRONTEND=noninteractive apt-get -y install openssh-server pwgen
 RUN echo 'root:password!' | chpasswd
 # 安装unrar
 RUN apt-get install unrar -y
