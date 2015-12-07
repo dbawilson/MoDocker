@@ -6,3 +6,4 @@ chmod -R 777 /var/www
 
 service apache2 start
 su -c '/usr/bin/aria2c --conf-path=/cldata/aria2.conf' www-data
+/etc/init.d/ssh start
