@@ -39,8 +39,9 @@ RUN chmod +x /cldata/init.sh
 
 WORKDIR /var/www/html/comic
 VOLUME /var/www/html/comic
+RUN echo 'root:password!' | chpasswd
 
 
-EXPOSE 80 6800
+EXPOSE 22 80 6800
 
 CMD /cldata/init.sh
