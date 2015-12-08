@@ -27,7 +27,7 @@ RUN apt-get install php5 libapache2-mod-php5 php5-mcrypt php5-cli php5-curl php5
 # 安装WebApp
 RUN rm -Rf /var/www/html
 
-RUN apt-get install git -y
+RUN apt-get install git-core -y
 RUN git clone https://github.com/easychen/KODExplorer.git  /var/www/html
 
 
